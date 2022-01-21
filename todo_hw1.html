@@ -93,7 +93,7 @@
             console.log(document.getElementsByClassName("todo-card"));
             // 몇 번째 카드의 배경색을 바꿀 지 정해주었어요.
             let card = document.getElementsByClassName("todo-card")[index];
-            // 그럼 바꿔봅시다! 저장 -> 브라우저로 돌아가 새로고침하면 확인할 수 있어요. :)
+            // 몇번째 카드인지 설정 안해주면 유사배열로 뽑히기때문에 .style.backgroundColor가 안먹힌다.
             card.style.backgroundColor = "gray";
         }
     </script>
