@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>오늘의 투두</title>
+
+    <style>
+        h1 {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .wrap {
+            display:flex;
+        }
+
+        .todo-card {
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 1em;
+            padding: 2em;
+        }
+
+        button {
+            width : calc(80% - 20px);
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="title">오늘 할 일</h1>
+    <div class="wrap">
+        <div class="todo-card">
+            <h3>고양이 밥주기</h3>
+            <p>고양이 물, 사료 챙겨주기</p>
+            <button>완료</button>
+        </div>
+
+        <div class="todo-card">
+            <h3>장보기</h3>
+            <p>토마토, 계란, 초코렛 사기</p>
+            <button>완료</button>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="todo-card">
+            <h3>코딩하기</h3>
+            <p>리액트 강의 1주차 듣기</p>
+            <button>완료</button>
+        </div>
+        <div class="todo-card">
+            <h3>코딩하기</h3>
+            <p>리액트 강의 1주차 듣기</p>
+            <button>완료</button>
+        </div>
+    </div>
+
+    <script>
+        const wraps = document.getElementsByClassName("wrap");
+        console.log(wraps);
+
+        //title의 elemet를 id로 가져온다.
+        const title = document.getElementById("title");
+        console.log(title);
+        //title의 속성인 style에 접근
+        title.style.backgroundColor = "yellow";
+
+        //일어날 일
+        function sayHello(event) {
+            console.log("hello");            
+        }
+        //태그 이름으로 button의 element를 가져온다
+        const buttons = document.getElementsByTagName("button");
+        console.log(buttons);
+        //버튼을 눌렀을때 sayHello를 해!
+        for(let i=0; i<buttons.length; i++) {
+            buttons[i].addEventListener("click", sayHello);
+        }
+        //.addEventListenr() 이벤트를 연결해 줄 때 사용하는 내장함수
+    </script>
+</body>
+
+</html>
