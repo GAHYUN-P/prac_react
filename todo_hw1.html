@@ -1,0 +1,102 @@
+<!-- 버튼을 클릭할때 카드 색깔 변화시키기 -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>오늘의 투두</title>
+
+    <style>
+        h1 {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .wrap {
+            display:flex;
+        }
+
+        .todo-card {
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 1em;
+            padding: 2em;
+        }
+
+        button {
+            width : calc(80% - 20px);
+        }
+
+        button:hover {
+            background-color: orange;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 id="title">오늘 할 일</h1>
+    <div class="wrap">
+        <div class="todo-card">
+            <h3>고양이 밥주기</h3>
+            <p>고양이 물, 사료 챙겨주기</p>
+            <button onclick="changeBackgroundColor(0)">완료</button>
+        </div>
+
+        <div class="todo-card">
+            <h3>장보기</h3>
+            <p>토마토, 계란, 초코렛 사기</p>
+            <button>완료</button>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <div class="todo-card">
+            <h3>코딩하기</h3>
+            <p>리액트 강의 1주차 듣기</p>
+            <button>완료</button>
+        </div>
+        <div class="todo-card">
+            <h3>코딩하기</h3>
+            <p>리액트 강의 1주차 듣기</p>
+            <button>완료</button>
+        </div>
+    </div>
+
+    <script>
+        const wraps = document.getElementsByClassName("wrap");
+        console.log(wraps);
+
+        //title의 elemet를 id로 가져온다.
+        const title = document.getElementById("title");
+        console.log(title);
+        //title의 속성인 style에 접근
+        title.style.backgroundColor = "yellow";
+       
+
+        const buttons = document.getElementsByTagName("button");
+
+        // 이 구문은 X! html collection은 유사 배열이기 때문에 array의 내장함수를 쓸 수 없어요!
+        //buttons.map(b => {
+            //console.log(b);
+        //});        
+
+        for (let i=0; i< buttons.length; i++){
+            // .addEventListener()로 클릭 이벤트를 연결해줍니다. 
+            buttons[i].addEventListener("click", sayHello);
+        }
+         
+
+        function changeBackgroundColor (index) {
+            // 가장 먼저 클래스 명으로 card들을 가지고 와봅시다! 아래 콘솔로 확인해보세요!
+            console.log(document.getElementsByClassName("todo-card"));
+            // 몇 번째 카드의 배경색을 바꿀 지 정해주었어요.
+            let card = document.getElementsByClassName("todo-card")[index];
+            // 그럼 바꿔봅시다! 저장 -> 브라우저로 돌아가 새로고침하면 확인할 수 있어요. :)
+            card.style.backgroundColor = "gray";
+        }
+    </script>
+</body>
+
+</html>
