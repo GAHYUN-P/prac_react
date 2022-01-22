@@ -1,24 +1,13 @@
 import './App.css';
+import Hello from './component/Hello';
+import Welcome from './component/Welcome';
 
 function App() {
-  const name = "가현";
-  const naver = {
-    name : "네이버",
-    url : "httmps://naver.com",
-  };
-  return (
-    <div className="App">
-      <h1
-        style = {{
-          color: "white",
-          backgroundColor: "orange",
-        }}
-        >
-           Welcome, {name}! </h1>
-        <p>{2+3}</p>
-        <a href={naver.url}>{naver.name}</a>
-    </div>
-  );
+  return <div className="App">
+    <Hello /> 
+    {/* 셀프클로즈 */}
+    <Welcome />
+  </div>
 }
 
 export default App;
