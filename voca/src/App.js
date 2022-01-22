@@ -7,6 +7,7 @@ function App() {
     <Hello /> 
     {/* 셀프클로즈 */}
     <Welcome />
+    <div className="box">App</div>
   </div>
 }
 
