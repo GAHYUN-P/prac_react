@@ -5,7 +5,7 @@
 // export default Hello;
 
 import World from "./World";
-import "./Hello.css"
+import styles from "./Hello.module.css";
 
 export default function Hello() {
     return (
@@ -22,7 +22,7 @@ export default function Hello() {
             }>Hello</h1>
             <World />
             <World />
-            <div className="box">Hello</div>
+            <div className={styles.box}>Hello</div>
         </div>
         // JSX는 하나의 태그만 만들 수 있기때문에 div가 없으면 에러가 난다
         // <></> 빈태그로 감싸줘도 된다
