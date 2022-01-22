@@ -7,8 +7,7 @@ function App() {
   return <div className="App">
     <Hello /> 
     {/* 셀프클로즈 */}
-    <Welcome />
-    <div className={styles.box}>App</div>
+    
   </div>
 }
 
