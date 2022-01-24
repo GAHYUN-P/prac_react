@@ -14,8 +14,8 @@ export default function Hello() {
         console.log(age);
     }
 
-    function showText(e) {
-        console.log(e.target.value)
+    function showText(txt) {
+        console.log(txt)
     }
 
     return (
@@ -30,10 +30,11 @@ export default function Hello() {
             }
             // 매개변수를 전달하기 편하다
             }>Show age</button>
-            <input type="text" onChange={showText}/>
-            {/* <input type="text" onChange={(e)=>{
-                console.log(e.target.value)
-            }}/> */}
+            <input type="text" onChange={e => {
+                const txt = e.target.value;
+                showText(txt);
+            }}
+            />
         </div>
         
     );
