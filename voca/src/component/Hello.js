@@ -16,8 +16,7 @@ export default function Hello() {
 
 
     function changeName() {
-        const newName = name === "Mike" ? "Jane" : "Mike";
-        setName(newName)
+        setName(name === "Mike" ? "Jane" : "Mike")
     }
 
     return (
