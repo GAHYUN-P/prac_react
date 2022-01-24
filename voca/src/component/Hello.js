@@ -4,15 +4,20 @@
 
 // export default Hello;
 
+import { useState } from "react";
+
 export default function Hello() {
 
-    let name = "Mike";
+    // let name = "Mike";
+    const [name, setName] = useState('Mike');
+    // [변수명,state를 변경해주는 함수]
+    // setName 함수가 호출되어서 name이 변하면 리액트는 이 컴포넌트를 다시 랜더랑해준다
+    // useState()의 괄호 안에는 초기값이 들어간다
+
 
     function changeName() {
-        name = name === "Mike" ? "Jane" : "Mike";
-        console.log(name);
-        document.getElementById("name").innerText = name;
-        // id name인 엘리먼트에 Text를 name으로 바꿔준다
+        const newName = name === "Mike" ? "Jane" : "Mike";
+        setName(newName)
     }
 
     return (
