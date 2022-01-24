@@ -15,15 +15,13 @@ export default function Hello() {
     // useState()의 괄호 안에는 초기값이 들어간다
 
 
-    function changeName() {
-        setName(name === "Mike" ? "Jane" : "Mike")
-    }
-
     return (
         <div>
             <h1>State</h1>
             <h2 id="name">{name}</h2>
-            <button onClick={changeName}>Change</button>
+            <button onClick={()=>{
+                setName(name === "Mike" ? "Jane" : "Mike");
+            }}>Change</button>
         </div>
         
     );
