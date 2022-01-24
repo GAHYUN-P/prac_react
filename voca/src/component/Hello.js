@@ -6,35 +6,19 @@
 
 export default function Hello() {
 
-    function showName() {
-        console.log("Mike");
-    }
+    let name = "Mike";
 
-    function showAge(age) {
-        console.log(age);
-    }
-
-    function showText(txt) {
-        console.log(txt)
+    function changeName() {
+        name = name === "Mike" ? "Jane" : "Mike";
+        console.log(name);
     }
 
     return (
         <div>
-            <h1>Hello</h1>
-            <button onClick={showName}>Show name</button>
-            {/* 여기에 showName()을 넣어주면 showName이 반환하는 값을 가져오는데
-            지금은 반환하는 값이 없으니까 undefined가 들어가게 된다.
-            함수명만 적어주면 기능만 실행해줌! */}
-            <button onClick= {() => {
-                showAge(10);
-            }
-            // 매개변수를 전달하기 편하다
-            }>Show age</button>
-            <input type="text" onChange={e => {
-                const txt = e.target.value;
-                showText(txt);
-            }}
-            />
+            <h1>State</h1>
+            <h2>{name}</h2>
+            <button onClick={changeName}>Change</button>
+            {/* 버튼을 눌러도 변화가 없다 */}
         </div>
         
     );
